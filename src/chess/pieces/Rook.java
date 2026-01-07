@@ -19,37 +19,37 @@ public class Rook extends ChessPiece {
 
         Position p = new Position(0,0);
 
-        p.setValues(position.getRow() - 1, position.getCollum());
+        p.setValues(position.getRow() - 1, position.getColumn());
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)){
-            mat[p.getRow()][p.getCollum()] = true;
+            mat[p.getRow()][p.getColumn()] = true;
             p.setRow(p.getRow() - 1);
         }
         if (getBoard().positionExists(p) && isThereOpponentPiece(p)){
-            mat[p.getRow()][p.getCollum()] = true;
+            mat[p.getRow()][p.getColumn()] = true;
         }
-        p.setValues(position.getRow(), position.getCollum() - 1);
+        p.setValues(position.getRow(), position.getColumn() - 1);
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)){
-            mat[p.getRow()][p.getCollum()] = true;
-            p.setCollum(p.getCollum() - 1);
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setCollum(p.getColumn() - 1);
         }
         if (getBoard().positionExists(p) && isThereOpponentPiece(p)){
-            mat[p.getRow()][p.getCollum()] = true;
+            mat[p.getRow()][p.getColumn()] = true;
         }
-        p.setValues(position.getRow(), position.getCollum() + 1);
+        p.setValues(position.getRow(), position.getColumn() + 1);
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)){
-            mat[p.getRow()][p.getCollum()] = true;
-            p.setCollum(p.getCollum() + 1);
+            mat[p.getRow()][p.getColumn()] = true;
+            p.setCollum(p.getColumn() + 1);
         }
         if (getBoard().positionExists(p) && isThereOpponentPiece(p)){
-            mat[p.getRow()][p.getCollum()] = true;
+            mat[p.getRow()][p.getColumn()] = true;
         }
-        p.setValues(position.getRow() + 1, position.getCollum());
+        p.setValues(position.getRow() + 1, position.getColumn());
         while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)){
-            mat[p.getRow()][p.getCollum()] = true;
+            mat[p.getRow()][p.getColumn()] = true;
             p.setRow(p.getRow() + 1);
         }
         if (getBoard().positionExists(p) && isThereOpponentPiece(p)){
-            mat[p.getRow()][p.getCollum()] = true;
+            mat[p.getRow()][p.getColumn()] = true;
         }
 
         return mat;
