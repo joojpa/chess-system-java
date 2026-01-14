@@ -23,11 +23,12 @@ public class ChessPosition {
     public int getRow() {
         return row;
     }
+
     protected Position toPositon(){
         return new Position(8 - row, collum - 'a');
     }
     protected static ChessPosition fromPosition(Position position){
-        return new ChessPosition((char)( 'a' - position.getColumn()), 8 - position.getRow());
+        return new ChessPosition((char)( 'a' + position.getColumn()), 8 - position.getRow());
     }
     @Override
     public String toString(){
